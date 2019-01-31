@@ -61,11 +61,19 @@ const resolvers = {
                 return acc;
             }, {});
         }       
+        
+        // TODO Grab incidents from s3. We probably will fetch that day's incidents
+        const fakeGrabFunc = (date)  => {
+            console.log('params', date);
+            return [];
+        };
+        const incidents = fakeGrabFunc(new Date());        
 
         return {
             agency,
             startTime,
             endTime,
+            incidents,
             routes: routeIDs.map(rid => ({
                 rid,
                 stops: stopsByRoute[rid],

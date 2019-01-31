@@ -42,11 +42,23 @@ type PointReliability {
    arrivals: [Route]
 }
 
+type Incident {
+    lat: Float
+    lon: Float
+    route: String
+    type: String
+    time: Int
+    gap: Int
+    delay: Int
+    agency: String
+}
+
 type TrynState {
     agency: String
     startTime: String
     endTime: String
     routes: [Route]
+    incidents: [Incident]
     pointReliabilities: [PointReliability]
 }
 
